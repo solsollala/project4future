@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+
+<html xml:lang="ko" lang="ko" xmlns="http://www.w3.org/1999/xhtml">    
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>논문, 전자책, 학술정보 통합서비스</title>
+</head>
+
+<style> li{list-style:none;}</style>
+
+<body>
+
+	<a href="/" onclick=""> <img src="static/img/top_logo.jpg" alt="메인으로 가기" title="메인으로 가기"></a> <br><br>
+
+	<form action="/response" method="get">
+		<div class="do_search">
+			검색어 <input type="text" id="keyword" name="keyword" value="사회관계망분석" title="검색 키워드 입력">
+			검색갯수 <input type="text" id="count" name="count" value="20" title="갯수 입력">
+			<button type="submit"> 검색 시작 </button>
+		</div>
+	</form>
+	<br>
+    <div class="process_sample">
+        <img src="static/img/console_empty.jpg" width="40%" height="40%" alt="검색 진행상황" BORDER="" ALIGN="left">
+    </div>
+
+</body>
+</html>
