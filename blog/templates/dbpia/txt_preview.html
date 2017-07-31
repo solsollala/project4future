@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Result Preview</title>
+		<script>
+			window.onload = function()
+			{
+				var request;
+
+				if(window.XMLHttpRequest) {
+					request = new XMLHttpRequest();
+				}
+				else if(window.ActiveXObject) {
+					request = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				else {
+					alert("fail");
+				}
+
+				request.open('GET', '/static/temp/result.txt');
+				request.send();
+				request.onreadystatechange = function() {
+				if(request.readyState == 4) {
+	            	if(request.status >= 200 && request.status < 300) {
+	               			document.getElementById("content").innerHTML = request.responseText;
+						}
+						else {
+							alert("fail")
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+	<div id="content"> </div>
+	</body>
+</html>

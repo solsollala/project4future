@@ -94,7 +94,7 @@ class Dbpia_Item:
     # ----------------------------------------------------------------------------
     def append_to(self, path):
         try:
-            f = open(path, "a", encoding='utf8')
+            f = open(path, "a", encoding='utf8', newline="\r\n")
             print("%s#%s#%s#%s#%s#%s#%s#%s#%s#%s" \
                   % (self.title, self.get_authors_nameonly(), self.publisher, self.get_publication(), self.get_issue(), \
                   self.pages, self.link_url, self.con_txt, self.summary_txt, self.get_keywords()), file=f)
