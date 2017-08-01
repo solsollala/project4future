@@ -1,0 +1,37 @@
+.row-main {
+   display: flex; /* equal height of the children */
+}
+
+.col-left,.col-main,.col-right {
+ /* flex:1; */ /* 같은 폭을 가지기를 원할 경우 사용 */
+}
+
+.col-main {
+background: url('./1.jpg') no-repeat center top;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: 100%;
+}
+
+.col-left {
+background: url('../img/bg-left.png') repeat center center;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: 100%;
+}
+
+.col-right {
+background: url('../img/bg-right.png') repeat center center;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: 100%;
+}
+
+@media (max-width: 768px) {
+ .col-left, .col-right {
+ display:none;
+ }
+}
