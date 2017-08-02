@@ -114,6 +114,9 @@ def tooltip_viewport(request):
 def gaia(request):
     return render(request, 'gaia-bootstrap-template/freebie.html', {})
 
+def gaia_prepare(request):
+    return render(request, 'gaia-bootstrap-template/freebie_prepare.html', {})
+
 def exercise(request):
     return render(request, 'exercise/index.html', {})
 

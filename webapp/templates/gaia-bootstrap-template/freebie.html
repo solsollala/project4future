@@ -27,46 +27,52 @@
         <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
         <div class="container">
             <div class="navbar-header">
-                <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar bar1"></span>
-                    <span class="icon-bar bar2"></span>
-                    <span class="icon-bar bar3"></span>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
                 </button>
-                <a href="http://www.netminer.com/main/main-read.do" class="navbar-brand">
-                    사이람 NetMiner
-                </a>
+                <a href="http://www.netminer.com/main/main-read.do" class="navbar-brand">사이람 NetMiner</a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right navbar-uppercase">
-                    <li class="dropdown">
-                        <a href="#gaia" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-share-alt"></i> Share
-                        </a>
-                        <ul class="dropdown-menu dropdown-danger">
-                            <li>
-                                <a href="#"><i class="fa fa-facebook-square"></i> Facebook</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-instagram"></i> Instagram</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="http://www.netminer.com/download_buy/download/download-readList.do" class="btn btn-danger btn-fill">Trial Download</a>
-                    </li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">인터넷 브릿지<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/search">문헌정보</a></li>
+                    <li><a href="/gaia_prepare">신문기사정보</a></li>
+                    <li><a href="/gaia_prepare">특허정보</a></li>
+                </ul>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">인트라넷 브릿지<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/gaia_prepare">웹 로그</a></li>
+                    <li><a href="/gaia_prepare">E-mail</a></li>
+                    <li><a href="/gaia_prepare">정형데이터 저장소</a></li>
+                    <li><a href="/gaia_prepare">비정형데이터 저장소</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#contact">연락처</a></li>
+
+            <li class="dropdown">
+                <a href="#gaia" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-share-alt"></i> Share </a>
+                <ul class="dropdown-menu dropdown-danger">
+                    <li><a href="#"><i class="fa fa-facebook-square"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
     </nav>
 
-
     <div class="section section-header">
-        <div class="parallax filter filter-color-red">
+        <div class="parallax filter filter-color-grey">
             <div class="image" style="background-image: url('{% static 'gaia/assets/img/friends/fish.jpg' %}')">
 
             </div>
@@ -82,14 +88,16 @@
         </div>
     </div>
 
-
     <div class="section">
         <div class="container">
             <div class="row">
                 <div class="title-area">
                     <h2>브릿징 서비스</h2>
                     <div class="separator separator-danger">✻</div>
-                    <p class="description">분석을 위한 원시데이터를 수집하고, 넷마이너 엔진을 위한 데이터셋을 자동으로 구성하여 고객이 SNA 분석 그 자체에 집중할 수 있도록 지원합니다.</p>
+                    <p class="description">우리는 여러분이 데이터를 수집하고 넷마이너 네트웍 데이터셋을 구성하는데 드는 시간과 불편함을 줄이겠습니다.
+                        브릿징 서비스는 인터넷 공간상의 원시데이터 저장소에서 데이터를 수집하고,
+                        넷마이너 엔진을 위한 데이터셋을 구성하고, 분석용 플러그인을 자동으로 실행하여
+                        여러분이 SNA분석 그 자체에 집중할 수 있도록 지원하기 위한 서비스입니다.</p>
                 </div>
             </div>
             <div class="row">
@@ -98,8 +106,8 @@
                         <div class="icon text-danger">
                             <i class="pe-7s-graph1"></i>
                         </div>
-                        <h3>문헌정보 브릿징</h3>
-                        <p class="description">국내외 논문, 기사, 판결문, 문건 등 쌓여만 있는 지식자료를 활용하여, 지식체계를 이해하고 트렌드를 예측할 수 있게 합니다.</p>
+                        <h3>인터넷 빅데이터</h3>
+                        <p class="description">홈페이지, 블로그, 카페, SNS 등 다양한 형태로 인터넷상에 존재하는 데이터를 수집하여 넷마이너 분석 엔진으로 전달합니다.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -107,8 +115,8 @@
                         <div class="icon text-danger">
                             <i class="pe-7s-note2"></i>
                         </div>
-                        <h3>소셜 관계정보 브릿징</h3>
-                        <p class="description">트위터, 페이스북 등 SNS 데이터를 수집하여 고객이 원하는 형태로 제공합니다.</p>
+                        <h3>인트라넷 빅데이터</h3>
+                        <p class="description">웹 로그, 전자메일 로그, 고객상담 로그 등 조직 내부에 존재하는 다양한 형태의 정형/비정형 데이터를 수집하여 넷마이너 분석엔진으로 전달합니다.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -116,8 +124,8 @@
                         <div class="icon text-danger">
                             <i class="pe-7s-music"></i>
                         </div>
-                        <h3>고객 맞춤형 정보 브릿징</h3>
-                        <p class="description">고객의 분석 목적에 맞춰 맞춤형 데이터를 수집하여 제공합니다. 법규제 허용 범위내에서 취득 가능한 위치와 개인정보 등을 부가하여 제공합니다.</p>
+                        <h3>시공간 추적형 데이터</h3>
+                        <p class="description">범죄수사, 사기적발 등 특수 고객의 분석 목적에 맞춰 맞춤형 데이터를 수집하여 제공합니다. 법률적 허용 범위내에서 취득 가능한 위치와 개인정보 등을 부가하여 제공합니다.</p>
                     </div>
                 </div>
             </div>
@@ -132,18 +140,17 @@
             </div>
             <div class="container">
                 <div class="title-area">
-                    <h2 class="text-white">사회관계망분석에 대한 열정을 함께 하실 분</h2>
+                    <h2 class="text-white">사회관계망분석 Global Top 도전을 함께 하실 분</h2>
                     <div class="separator line-separator">♦</div>
                     <p class="description">빅데이터 분석시대의 도래와 함께 사회관계망분석은 이제 다양한 분야로 활용범위가 넓어지고 있습니다. 국내 최고의 기술력을 보유한 사이람의 NetMiner와 함께 국내를 넘어 세계 시장의 넘버원이 되는 여정을 함께 하실 가족을 찾습니다. </p>
                 </div>
 
                 <div class="button-get-started">
-                    <a href="#gaia" class="btn btn-danger btn-fill btn-lg">Contact Us</a>
+                    <a href="#gaia" class="btn btn-danger btn-fill btn-lg">채용 담당자 연락처</a>
                 </div>
             </div>
         </div>
     </div>
-
 
     <footer class="footer footer-big footer-color-black" data-color="black">
         <div class="container">
