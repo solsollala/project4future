@@ -2,9 +2,9 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.gaia, name='gaia'),
-    url(r'^gaia_prepare$', views.gaia_prepare, name='gaia_prepare'),
-    url(r'^hello$', views.hello, name='hello'),
+    url(r'^$', views.gate, name='gate'),
+    url(r'^under_construct$', views.under_construct, name='under_construct'),
+    url(r'^hello/$', views.hello, name='hello'),
 	url(r'^post/(?P<pk>\d+)/$', views.post_detail, name='post_detail'),
     url(r'^map$', views.map, name='map'),
     url(r'^search$', views.search, name='search'),
@@ -29,5 +29,6 @@ urlpatterns = [
     url(r'^sticky_footer_navbar$', views.sticky_footer_navbar, name='sticky_footer_navbar'),
     url(r'^theme$', views.theme, name='theme'),
     url(r'^tooltip_viewport$', views.tooltip_viewport, name='tooltip_viewport'),
-    url(r'^exercise$', views.exercise, name='exercise'),
+    url(r'^bl_dashboard$', views.bl_dashboard, name='bl_dashboard')
 ]
+

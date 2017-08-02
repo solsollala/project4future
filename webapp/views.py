@@ -108,15 +108,15 @@ def tooltip_viewport(request):
     return render(request, 'bootstrap/tooltip_viewport/index.html', {})
 
 # ---------------------------------------------------------------
-# bootstrap 연습하기
+# 블루마린
 # ---------------------------------------------------------------
 
-def gaia(request):
-    return render(request, 'gaia-bootstrap-template/freebie.html', {})
+def gate(request):
+    return render(request, 'bluemarline/index.html', {})
 
-def gaia_prepare(request):
-    return render(request, 'gaia-bootstrap-template/freebie_prepare.html', {})
+def under_construct(request):
+    return render(request, 'bluemarline/under_construct.html', {})
 
-def exercise(request):
-    return render(request, 'exercise/index.html', {})
+def bl_dashboard(request):
+    return render(request, 'bluemarline/dashboard.html', {})
 
