@@ -176,3 +176,10 @@ def sna_blog(request):
 def logout_page(request):
     logout(request)
     return HttpResponseRedirect('/')
+
+# ---------------------------------------------------------------
+# 다이얼로그 플로우
+# ---------------------------------------------------------------
+
+def welcome_dialogflow(request):
+    return render(request, 'welcome_dialogflow.html', {})

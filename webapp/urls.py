@@ -39,9 +39,11 @@ urlpatterns += [
     url(r'^tooltip_viewport$', views.tooltip_viewport, name='tooltip_viewport'),
 ]
 
-# 블루마린 관련
+# 블루마린 / 다이얼로그플로우 관련
 urlpatterns += [
-    url(r'^$', views.bluemarline_home, name='bluemarline_home'),
+#    url(r'^$', views.bluemarline_home, name='bluemarline_home'), # 첫화면
+    url(r'^$', views.welcome_dialogflow, name='welcome_dialogflow'), # 첫화면
+
     url(r'^bl_dashboard$', views.bl_dashboard, name='bl_dashboard'),
     url(r'^under_construct$', views.under_construct, name='under_construct'),
     url(r'^about_us$', views.about_us, name='about_us'),
