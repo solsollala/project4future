@@ -117,7 +117,7 @@ from django.contrib.auth import logout
 
 import datetime
 
-def bluemarline_home(request):
+def bluemarlin(request):
 
     # cookie 테스트(1)
     request.session['my_car'] = 'sonata'

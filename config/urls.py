@@ -19,14 +19,12 @@ from django.conf import settings
 from django.contrib.auth import views as auth_views
 
 from rest_framework import routers
-from restapp import views
+from restapp import views as restview
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('webapp.urls')),
-    url(r'^', include(router.urls)),
+    url(r'', include('restapp.urls')),
 ]
