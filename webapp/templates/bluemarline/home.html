@@ -69,11 +69,19 @@
                     <!--    <li><a class="btn big-login" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log in</a></li>
                     <li><a class="btn big-register" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Register</a></li> -->
 
+
+
+                    <li><a href="/login" class="btn btn-primary btn-sm">Log in</a></li>
+                    <!-- 위 라인으로 대체하면 계속 로그인이 안된 상태로 나옴, 아래를 사용하면 로그인 처리됨
                     {% if user.is_authenticated %}
                         <li><a href="/logout" class="btn btn-primary btn-sm"> Log out : {{ user.username }}</a></li>
                     {% else %}
                         <li><a href="/login" class="btn btn-primary btn-sm">Log in</a></li>
                     {% endif %}
+                    -->
+
+
+
 
                     <li><a href="/bl_dashboard" class="btn btn-primary btn-sm">Dashboard</a></li>
                     <li><a href="/sna_blog" class="btn btn-primary btn-sm">Blog</a></li>
