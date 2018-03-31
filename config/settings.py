@@ -29,13 +29,13 @@ ALLOWED_HOSTS = ['183.101.16.119', 'uw.iptime.org', '192.168.0.202', '127.0.0.1'
 # Application definition
 
 INSTALLED_APPS = [
+    'webapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'webapp',
     'rest_framework',
 ]
 
@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'root.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'root.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
@@ -126,3 +126,9 @@ REST_FRAMEWORK = {
     ],
     'PAGE_SIZE': 10
 }
+
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = 'login'
+
+SESSION_COOKIE_AGE = 60 #초
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True

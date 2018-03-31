@@ -6,15 +6,14 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="{% static 'ctim/gaia/assets/img/favicon.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'ctim/gaia/assets/img/apple-icon.png' %}">
+	<link rel="icon" type="image/png" sizes="96x96" href="{% static 'img/favicon.png' %}">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>사이람 넷마이너 브릿지</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <link href="{% static 'ctim/gaia/assets/css/bootstrap.css' %}" rel="stylesheet" />
     <link href="{% static 'ctim/gaia/assets/css/gaia.css' %}" rel="stylesheet"/>
-
 
     <link href="{% static 'ctim/login_register/login-register.css' %}" rel="stylesheet" />
 
@@ -67,9 +66,17 @@
                         </ul>
                     </li>
 
-                    <li><a class="btn big-login" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log in</a></li>
-            <!--        <li><a class="btn big-register" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Register</a></li> -->
-                    <li><a href="/bl_dashboard" class="btn btn-primary btn-xs">Dashboard</a></li>
+                    <!--    <li><a class="btn big-login" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log in</a></li>
+                    <li><a class="btn big-register" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Register</a></li> -->
+
+                    {% if user.is_authenticated %}
+                        <li><a href="/logout" class="btn btn-primary btn-sm"> Log out : {{ user.username }}</a></li>
+                    {% else %}
+                        <li><a href="/login" class="btn btn-primary btn-sm">Log in</a></li>
+                    {% endif %}
+
+                    <li><a href="/bl_dashboard" class="btn btn-primary btn-sm">Dashboard</a></li>
+                    <li><a href="/sna_blog" class="btn btn-primary btn-sm">Blog</a></li>
 
                     <!--로그인 또는 등록을 위한 다이얼로그-->
                     <div class="modal fade login" id="loginModal">
@@ -104,7 +111,7 @@
                                                 <input id="email" class="form-control" type="text" placeholder="Email" name="email">
                                                 <input id="password" class="form-control" type="password" placeholder="Password" name="password">
                                                 <input class="btn btn-default btn-login" type="button" value="Login" onclick="loginAjax()">
-                                                </form>
+                                               </form>
                                             </div>
                                          </div>
                                     </div>
@@ -135,6 +142,7 @@
                               </div>
                           </div>
                     </div>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -176,7 +184,7 @@
                         <div class="icon text-danger">
                             <i class="pe-7s-graph1"></i>
                         </div>
-                        <h3>인터넷 빅데이터</h3>
+                        <h3>인터넷에서</h3>
                         <p class="description">홈페이지, 블로그, 카페, SNS 등 다양한 형태로 인터넷상에 존재하는 데이터를 수집하여 넷마이너 분석 엔진으로 전달합니다.</p>
                     </div>
                 </div>
@@ -185,7 +193,7 @@
                         <div class="icon text-danger">
                             <i class="pe-7s-note2"></i>
                         </div>
-                        <h3>인트라넷 빅데이터</h3>
+                        <h3>인트라넷에서</h3>
                         <p class="description">웹 로그, 전자메일 로그, 고객상담 로그 등 조직 내부에 존재하는 다양한 형태의 정형/비정형 데이터를 수집하여 넷마이너 분석엔진으로 전달합니다.</p>
                     </div>
                 </div>
@@ -194,8 +202,8 @@
                         <div class="icon text-danger">
                             <i class="pe-7s-music"></i>
                         </div>
-                        <h3>시공간 추적형 데이터</h3>
-                        <p class="description">범죄수사, 사기적발 등 특수 고객의 분석 목적에 맞춰 맞춤형 데이터를 수집하여 제공합니다. 법률적 허용 범위내에서 취득 가능한 위치와 개인정보 등을 부가하여 제공합니다.</p>
+                        <h3>다양한 곳에서</h3>
+                        <p class="description">범죄수사, 사기적발 등 특수 고객의 분석 목적에 맞춰 맞춤형 데이터를 수집하여 제공합니다. 법적 허용 범위내에서 취득 가능한 공간정보와 개인정보 등을 부가하여 제공합니다.</p>
                     </div>
                 </div>
             </div>

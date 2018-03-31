@@ -73,7 +73,12 @@ def parse_api_response(api_response, journals):
         print(title)
 
         tag_authors = tag_item.find("authors")
-        list_tag_author = tag_authors.findall("author")
+
+        try:
+            list_tag_author = tag_authors.findall("author")  # 'NoneType' object has no attribute 'findall'
+        except Exception as e:
+            print(str(e))
+            pass
 
         Author_list = []
         for tag_author in list_tag_author:

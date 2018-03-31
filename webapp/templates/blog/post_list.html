@@ -1,37 +1,13 @@
-{% load staticfiles %}
+{% extends 'blog/base.html' %}
 
-<html>
-    <head>
-        <title>새로 시작하는 인생</title>
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">	
-		<link rel="stylesheet" href="{% static 'css/blog.css' %}">		
-		<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">		
-    </head>
-    <body>
-		<div class="page-header">
-			<h1><a href="/">장고로 만든 웹</a></h1>
-		</div>	
-        <div>
-            <h2><a href="">나는 나로 살기로 했다</a></h2>
-            <p>우리는 모두 슈퍼 히어로를 꿈꿨다. 그리고 지금은 세상이 아니라<br>나를 구하는 것이 먼저인 어른이 되었다.<br>애매한 나이, 애매한 경력, 애매한 실력, 애매한 어른으로 자란 우리는 모두<br>어른을 연기하며 살고 있는 것은 아닐까?</p>
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-
-
-		<div class="content container">
-			<div class="row">
-				<div class="col-md-8">
-					{% for post in posts %}
-						<div class="post">
-							<div class="date">
-								<p>published: {{ post.published_date }}</p>
-							</div>
-							<h1><a href="">{{ post.title }}</a></h1>
-							<p>{{ post.text|linebreaksbr }}</p>
-						</div>
-					{% endfor %}
-				</div>
-			</div>
-		</div>		
-	</body>
-</html>
+    {% endfor %}
+{% endblock %}

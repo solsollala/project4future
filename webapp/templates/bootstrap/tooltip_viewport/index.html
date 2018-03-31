@@ -2,7 +2,6 @@
 
 {% load staticfiles %}
 
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -11,7 +10,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="{% static 'bootstrap/assets/ico/favicon.ico">
+	<link rel="icon" type="image/png" sizes="96x96" href="{% static 'img/favicon.png' %}">
 
     <title>Tooltip Viewport Example for Bootstrap</title>
 
@@ -22,10 +21,10 @@
     <link href="{% static 'bootstrap/assets/css/ie10-viewport-bug-workaround.css' %}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="{% static 'bootstrap/user_data/tooltip-viewport.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/tooltip-viewport.css' %}" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="{% static 'bootstrap/assets/js/ie8-responsive-file-warning.js' %}"></script><![endif]-->
+    <!--[if lt IE 9]><script src="{% static 'bootstrap_dist/assets/js/ie8-responsive-file-warning.js' %}"></script><![endif]-->
     <script src="{% static 'bootstrap/assets/js/ie-emulation-modes-warning.js' %}"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -61,6 +60,6 @@
     <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="{% static 'bootstrap/assets/js/ie10-viewport-bug-workaround.js' %}"></script>
-    <script src="{% static 'bootstrap/user_data/tooltip-viewport.js' %}"></script>
+    <script src="{% static 'bootstrap/tooltip-viewport.js' %}"></script>
   </body>
 </html>

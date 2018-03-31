@@ -1,17 +1,18 @@
 from django.shortcuts import render, render_to_response, get_object_or_404
 from django.utils import timezone
 from .models import Post
+from django.contrib.auth.decorators import login_required
 
-def hello(request):
-    return render(request, 'hello.html', {} )
+def catalog(request):
+    return render(request, 'catalog.html', {} )
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'webapp/post_list.html', {'posts': posts})
-	
+    return render(request, 'blog/post_list.html', {'posts': posts})
+
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'webapp/post_detail.html', {'post': post})
+    return render(request, 'blog/post_detail.html', {'post': post})
 
 def map(request):
     return render(request, 'vworld/map.html', {})
@@ -43,13 +44,13 @@ def response(request):
     }
     return render_to_response('dbpia/search_response.html', context)
 
-
 def preview(request):
     return render(request, 'dbpia/txt_preview.html', {})
 
 # ---------------------------------------------------------------
 # bootstrap 연동하기
 # ---------------------------------------------------------------
+
 def starter_template(request):
     return render(request, 'bootstrap/starter_template/index.html', {})
 
@@ -111,12 +112,67 @@ def tooltip_viewport(request):
 # 블루마린
 # ---------------------------------------------------------------
 
-def gate(request):
-    return render(request, 'bluemarline/index.html', {})
+from django.http import HttpResponseRedirect
+from django.contrib.auth import logout
+
+import datetime
+
+def bluemarline_home(request):
+
+    # cookie 테스트(1)
+    request.session['my_car'] = 'sonata'
+    num_visits = request.session.get('num_visits',0)
+    request.session['num_visits'] = num_visits + 1
+
+    """
+    Get a session value by its key (e.g. 'my_car'), raising a KeyError if the key is not present
+       my_car = request.session['my_car'] 
+    Get a session value, setting a default if it is not present ('mini')
+       my_car = request.session.get('my_car', 'mini') 
+    Set a session value
+       request.session['my_car'] = 'mini'  
+    Delete a session value 
+       del request.session['my_car']
+    """
+
+    response = render(request, 'bluemarline/home.html', {})
+
+    # cookie 테스트(2)
+    response.set_cookie('visit_time', datetime.datetime.now())
+
+    return response
 
 def under_construct(request):
     return render(request, 'bluemarline/under_construct.html', {})
 
+def about_us(request):
+
+    # 쿠키와 user 객체의 사용방법 테스트 (1)
+    print(request.session['my_car']) # cookie 테스트
+    print(request.session['num_visits'])
+
+    if request.user.is_authenticated:
+        print(request.user.username)
+    else:
+        print("로그인 후 이용해 주세요")
+
+    # 쿠키와 user 객체의 사용방법 테스트 (1)
+    print(request.COOKIES['visit_time'])
+
+    return render(request, 'bluemarline/about_us.html', {})
+
+@login_required
 def bl_dashboard(request):
     return render(request, 'bluemarline/dashboard.html', {})
 
+@login_required
+def sna_blog(request):
+    return render(request, 'bluemarline/sna_blog.html', {})
+
+# ---------------------------------------------------------------
+# 로그인
+# ---------------------------------------------------------------
+
+def logout_page(request):
+    logout(request)
+    return HttpResponseRedirect('/')
