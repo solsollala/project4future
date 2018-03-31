@@ -117,6 +117,7 @@ from django.contrib.auth import logout
 
 import datetime
 
+""" 임시로 막음
 def bluemarlin(request):
 
     # cookie 테스트(1)
@@ -124,23 +125,16 @@ def bluemarlin(request):
     num_visits = request.session.get('num_visits',0)
     request.session['num_visits'] = num_visits + 1
 
-    """
-    Get a session value by its key (e.g. 'my_car'), raising a KeyError if the key is not present
-       my_car = request.session['my_car'] 
-    Get a session value, setting a default if it is not present ('mini')
-       my_car = request.session.get('my_car', 'mini') 
-    Set a session value
-       request.session['my_car'] = 'mini'  
-    Delete a session value 
-       del request.session['my_car']
-    """
-
     response = render(request, 'bluemarline/home.html', {})
 
     # cookie 테스트(2)
     response.set_cookie('visit_time', datetime.datetime.now())
 
     return response
+"""
+
+def bluemarlin(request):
+    return render(request, 'bluemarline/home.html', {})
 
 def under_construct(request):
     return render(request, 'bluemarline/under_construct.html', {})
