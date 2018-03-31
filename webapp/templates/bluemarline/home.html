@@ -69,12 +69,7 @@
                     <!--    <li><a class="btn big-login" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log in</a></li>
                     <li><a class="btn big-register" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Register</a></li> -->
 
-                    {% if user.is_authenticated %}
-                        <li><a href="/logout" class="btn btn-primary btn-sm"> Log out : {{ user.username }}</a></li>
-                    {% else %}
-                        <li><a href="/login" class="btn btn-primary btn-sm">Log in</a></li>
-                    {% endif %}
-
+                    <li><a href="/login" class="btn btn-primary btn-sm">Log in</a></li>
                     <li><a href="/bl_dashboard" class="btn btn-primary btn-sm">Dashboard</a></li>
                     <li><a href="/sna_blog" class="btn btn-primary btn-sm">Blog</a></li>
 
