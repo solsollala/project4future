@@ -6,4 +6,4 @@ http://127.0.0.1:8000/users
 Authorizaton
 admin / dhwotjr3227
 
-파이참에서
+촤측에서
