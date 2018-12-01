@@ -6,6 +6,5 @@ http://127.0.0.1:8000/users
 Authorizaton
 admin / dhwotjr3227
 
-참조) 조대협 블로그
 
  
