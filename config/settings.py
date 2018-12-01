@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ['183.101.16.119', 'uw.iptime.org', '192.168.0.202', '127.0.0.1'
 # Application definition
 
 INSTALLED_APPS = [
-#    'webapp',
+    'webapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'restapp',
 ]
 
 MIDDLEWARE = [

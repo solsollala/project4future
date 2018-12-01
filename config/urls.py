@@ -23,7 +23,7 @@ from rest_framework import routers
 router = routers.DefaultRouter()
 
 urlpatterns = [
-#    url(r'^admin/', admin.site.urls),
-#    url(r'', include('webapp.urls')),
+    url(r'^admin/', admin.site.urls),
+    url(r'', include('webapp.urls')),
     url(r'', include('restapp.urls')),
 ]
