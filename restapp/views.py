@@ -19,5 +19,5 @@ from django.http import JsonResponse
 
 @api_view(['POST'])
 def dialogflow(request):
-    r = {"speech":"감성돔요","displayText":"감성돔요","messages":{"type": 0,"speech": "요즘 이시간에는 감성돔이 많이 나와요"},"data":{},"contextOut":[],"source":"example.com","followupEvent":{}}
+    r = {"speech":"고기없어요","displayText":"고기없어요","messages":{"type": 0,"speech": "요즘 이시간에는 고기없어요"},"data":{},"contextOut":[],"source":"example.com","followupEvent":{}}
     return JsonResponse(r)
