@@ -1,0 +1,83 @@
+{
+  "id": "62173e73-47e7-4d94-acdc-41711d587bda",
+  "timestamp": "2018-12-02T07:32:32.067Z",
+  "lang": "ko",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "영흥도",
+    "action": "200-fishing-getTideTime.200-fishing-getTideTime-custom",
+    "actionIncomplete": false,
+    "parameters": {
+      "bm_pointname": "영흥선착장"
+    },
+    "contexts": [
+      {
+        "name": "getfish",
+        "parameters": {
+          "time.original": "",
+          "bm_pointname.original": "영흥",
+          "fishingtype.original": "원투",
+          "fishingtype": "원투낚시",
+          "bm_pointname": "영흥선착장",
+          "bm_tidetime_type": "만조",
+          "time": "",
+          "bm_tidetime_type.original": "만조"
+        },
+        "lifespan": 3
+      },
+      {
+        "name": "gettidetimetype",
+        "parameters": {
+          "time.original": "",
+          "bm_pointname.original": "영흥",
+          "bm_pointname": "영흥선착장",
+          "bm_tidetime_type": "만조",
+          "time": "",
+          "bm_tidetime_type.original": "만조"
+        },
+        "lifespan": 5
+      },
+      {
+        "name": "getpointinfo",
+        "parameters": {
+          "time.original": "",
+          "bm_pointname.original": "영흥",
+          "pointtype.original": "방파제",
+          "pointtype": "방파제",
+          "pointname": "영흥선착장",
+          "fishingtype.original": "원투",
+          "fishingtype": "원투낚시",
+          "bm_pointname": "영흥선착장",
+          "bm_tidetime_type": "만조",
+          "time": "",
+          "bm_tidetime_type.original": "만조",
+          "pointname.original": "영흥"
+        },
+        "lifespan": 5
+      }
+    ],
+    "metadata": {
+      "isFallbackIntent": "false",
+      "webhookResponseTime": 405,
+      "intentName": "200-fishing-getTideTime - custom",
+      "intentId": "c9fcc1a2-dfbd-4cdf-b006-f6deb3074010",
+      "webhookUsed": "true",
+      "webhookForSlotFillingUsed": "false",
+      "endConversation": true
+    },
+    "fulfillment": {
+      "speech": "오늘의 물때는 5물이네요. 오전3시-오후3시 수위가 가장 낮고, 오전9시-오후9시 수위가 가장 높습니다.",
+      "displayText": "오늘의 물때는 5물이네요. 오전3시-오후3시 수위가 가장 낮고, 오전9시-오후9시 수위가 가장 높습니다.",
+      "messages": {
+        "type": 0,
+        "speech": "오늘의 물때는 5물이네요. 오전3시-오후3시 수위가 가장 낮고, 오전9시-오후9시 수위가 가장 높습니다."
+      }
+    },
+    "score": 1
+  },
+  "status": {
+    "code": 200,
+    "errorType": "success"
+  },
+  "sessionId": "dcae1fdb-0960-dfdb-3620-54435ac8be9e"
+}

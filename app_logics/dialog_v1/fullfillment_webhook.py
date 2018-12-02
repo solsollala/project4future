@@ -5,9 +5,18 @@ import json
 INTENT_TIDETIME = "200-fishing-getTideTime - custom"
 INTENT_FISH = "102-fishing-getFish"
 
-def dialog(request):
+def webhook(request):
     intent = request['result']["metadata"]["intentName"]
-    parameters = request['result']['parameters']
+    contexts = request['result']['contexts']
+
+    print('-' * 30)
+    for ctx in contexts:
+        ctx_name = ctx['name']
+        print('context_name:' + ctx_name)
+        ctx_params = ctx['parameters']
+        for key,value in ctx_params.items():
+            print(key, ":", value)
+        print('-'*30)
 
     msg = ''
     if INTENT_TIDETIME in intent:
