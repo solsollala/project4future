@@ -15,7 +15,6 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-
 class Customer(models.Model):
     name = models.CharField(max_length=50)
     email = models.CharField(max_length=30)
@@ -25,6 +24,19 @@ class Customer(models.Model):
 
     def publish(self):
         self.visit_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.name
+
+class bm_fish_point(models.Model):
+    name = models.CharField(max_length=50)
+    kind = models.CharField(max_length=2)
+    district_code = models.CharField(max_length=15)
+    update_date = models.DateTimeField(blank=True, null=True)
+
+    def publish(self):
+        self.update_date = timezone.now()
         self.save()
 
     def __str__(self):
