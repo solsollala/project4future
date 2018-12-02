@@ -14,17 +14,27 @@ def sa_webhook(request):
     return Response(result)
 
 from django.http import JsonResponse
+from .dialog_v1 import dialogManager as dm
 
 @api_view(['POST'])
 def dialogflow(request):
 
-    try:
-        with open('~/project4future/fullfill_request.json', 'w') as f:
-            f.write(str(request.stream.read().decode('utf-8')))
-            f.close()
-    except:
-        pass
+    # try:
+    #     with open('~/project4future/fullfill_request.json', 'w') as f:
+    #         f.write(str(request.stream.read().decode('utf-8')))
+    #         f.close()
+    # except:
+    #     pass
 
-    r = {"speech":"꽁치가 잘 잡힌다네요","displayText":"고기없어요","messages":{"type": 0,"speech": "요즘 이시간에는 고기없어요"},"data":{},"contextOut":[],"source":"example.com","followupEvent":{}}
+    request_body = conver2json(request.stream.read().decode('utf-8'))
 
-    return JsonResponse(r)
+    return JsonResponse(dm.dialog(request_body))
+
+
+import json
+
+def conver2json(content):
+    if type(content) is dict:
+        return content
+    if type(content) is str:
+        return json.loads(content)
