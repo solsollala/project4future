@@ -1,0 +1,44 @@
+{
+  "id": "05137d50-3dfc-4690-aa79-8d84585977b1",
+  "timestamp": "2018-12-02T05:20:20.02Z",
+  "lang": "ko",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "그래",
+    "action": "",
+    "actionIncomplete": false,
+    "parameters": {},
+    "contexts": [
+      {
+        "name": "getfish",
+        "parameters": {
+          "fishingtype.original": "원투",
+          "fishingtype": "원투낚시"
+        },
+        "lifespan": 4
+      }
+    ],
+    "metadata": {
+      "isFallbackIntent": "false",
+      "webhookResponseTime": 416,
+      "intentName": "102-fishing-getFish",
+      "intentId": "fdf0e7be-b719-4ba0-89a5-cfd18289ca59",
+      "webhookUsed": "true",
+      "webhookForSlotFillingUsed": "false"
+    },
+    "fulfillment": {
+      "speech": "꽁치가 잘 잡힌다네요",
+      "displayText": "고기없어요",
+      "messages": {
+        "type": 0,
+        "speech": "요즘 이시간에는 고기없어요"
+      }
+    },
+    "score": 1
+  },
+  "status": {
+    "code": 200,
+    "errorType": "success"
+  },
+  "sessionId": "dcae1fdb-0960-dfdb-3620-54435ac8be9e"
+}
