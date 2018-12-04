@@ -10,7 +10,7 @@
 	<link rel="icon" type="image/png" sizes="96x96" href="{% static 'img/favicon.png' %}">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>사이람 넷마이너 브릿지</title>
+    <title></title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <link href="{% static 'ctim/gaia/assets/css/bootstrap.css' %}" rel="stylesheet" />
     <link href="{% static 'ctim/gaia/assets/css/gaia.css' %}" rel="stylesheet"/>
@@ -43,36 +43,18 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">인터넷 브릿지<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/search">문헌정보</a></li>
+                            <li><a href="/under_construct">문헌정보</a></li>
                             <li><a href="/under_construct">신문기사정보</a></li>
                             <li><a href="/under_construct">특허정보</a></li>
                         </ul>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">인트라넷 브릿지<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/under_construct">웹 로그</a></li>
-                            <li><a href="/under_construct">E-mail</a></li>
                             <li><a href="/under_construct">정형데이터 저장소</a></li>
                             <li><a href="/under_construct">비정형데이터 저장소</a></li>
                         </ul>
                     </li>
-
-                    <li class="dropdown">
-                        <a href="#gaia" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-share-alt"></i> Share </a>
-                        <ul class="dropdown-menu dropdown-danger">
-                            <li><a href="#"><i class="fa fa-facebook-square"></i> Facebook</a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i> Instagram</a></li>
-                        </ul>
-                    </li>
-
-                    <!--    <li><a class="btn big-login" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log in</a></li>
-                    <li><a class="btn big-register" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Register</a></li> -->
-
                     <li><a href="/login" class="btn btn-primary btn-sm">Log in</a></li>
-                    <li><a href="/bl_dashboard" class="btn btn-primary btn-sm">Dashboard</a></li>
-                    <li><a href="/sna_blog" class="btn btn-primary btn-sm">Blog</a></li>
-
                     <!--로그인 또는 등록을 위한 다이얼로그-->
                     <div class="modal fade login" id="loginModal">
                           <div class="modal-dialog login animated">
@@ -80,48 +62,6 @@
                                  <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                     <h4 class="modal-title">Login with</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="box">
-                                         <div class="content">
-                                            <div class="social">
-                                                <a class="circle github" href="/auth/github">
-                                                    <i class="fa fa-github fa-fw"></i>
-                                                </a>
-                                                <a id="google_login" class="circle google" href="/auth/google_oauth2">
-                                                    <i class="fa fa-google-plus fa-fw"></i>
-                                                </a>
-                                                <a id="facebook_login" class="circle facebook" href="/auth/facebook">
-                                                    <i class="fa fa-facebook fa-fw"></i>
-                                                </a>
-                                            </div>
-                                            <div class="division">
-                                                <div class="line l"></div>
-                                                  <span>or</span>
-                                                <div class="line r"></div>
-                                            </div>
-                                            <div class="error"></div>
-                                            <div class="form loginBox">
-                                                <form method="post" action="/login" accept-charset="UTF-8">
-                                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                                <input class="btn btn-default btn-login" type="button" value="Login" onclick="loginAjax()">
-                                               </form>
-                                            </div>
-                                         </div>
-                                    </div>
-                                    <div class="box">
-                                        <div class="content registerBox" style="display:none;">
-                                         <div class="form">
-                                            <form method="post" html="{:multipart=>true}" data-remote="true" action="/register" accept-charset="UTF-8">
-                                            <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                            <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                            <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
-                                            <input class="btn btn-default btn-register" type="submit" value="Create account" name="commit">
-                                            </form>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="modal-footer">
                                     <div class="forgot login-footer">
@@ -137,192 +77,11 @@
                               </div>
                           </div>
                     </div>
-
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
     </nav>
-
-    <div class="section section-header">
-        <div class="parallax filter filter-color-grey">
-            <div class="image" style="background-image: url('{% static 'ctim/gaia/assets/img/friends/fish.jpg' %}')">
-
-            </div>
-            <div class="container">
-                <div class="content">
-                    <div class="title-area">
-                        <h1 class="title-modern">넷마이너 브릿징</h1>
-                        <h2>We will deliver data to your NetMiner</h2>
-                        <div class="separator line-separator">♦</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="container">
-            <div class="row">
-                <div class="title-area">
-                    <h2>브릿징 서비스</h2>
-                    <div class="separator separator-danger">✻</div>
-                    <p class="description">우리는 여러분이 데이터를 수집하고 넷마이너 네트웍 데이터셋을 구성하는데 드는 시간과 불편함을 줄이겠습니다.
-                        브릿징 서비스는 인터넷 공간상의 원시데이터 저장소에서 데이터를 수집하고,
-                        넷마이너 엔진을 위한 데이터셋을 구성하고, 분석용 플러그인을 자동으로 실행하여
-                        여러분이 SNA분석 그 자체에 집중할 수 있도록 지원하기 위한 서비스입니다.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="info-icon">
-                        <div class="icon text-danger">
-                            <i class="pe-7s-graph1"></i>
-                        </div>
-                        <h3>인터넷에서</h3>
-                        <p class="description">홈페이지, 블로그, 카페, SNS 등 다양한 형태로 인터넷상에 존재하는 데이터를 수집하여 넷마이너 분석 엔진으로 전달합니다.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="info-icon">
-                        <div class="icon text-danger">
-                            <i class="pe-7s-note2"></i>
-                        </div>
-                        <h3>인트라넷에서</h3>
-                        <p class="description">웹 로그, 전자메일 로그, 고객상담 로그 등 조직 내부에 존재하는 다양한 형태의 정형/비정형 데이터를 수집하여 넷마이너 분석엔진으로 전달합니다.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="info-icon">
-                        <div class="icon text-danger">
-                            <i class="pe-7s-music"></i>
-                        </div>
-                        <h3>다양한 곳에서</h3>
-                        <p class="description">범죄수사, 사기적발 등 특수 고객의 분석 목적에 맞춰 맞춤형 데이터를 수집하여 제공합니다. 법적 허용 범위내에서 취득 가능한 공간정보와 개인정보 등을 부가하여 제공합니다.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section section-small section-get-started">
-        <div class="parallax filter">
-            <div class="image"
-                style="background-image: url('{% static 'ctim/gaia/assets/img/friends/coffee.jpg' %}')">
-
-            </div>
-            <div class="container">
-                <div class="title-area">
-                    <h2 class="text-white">사회관계망분석 Global Top 도전을 함께 하실 분</h2>
-                    <div class="separator line-separator">♦</div>
-                    <p class="description">빅데이터 분석시대의 도래와 함께 사회관계망분석은 이제 다양한 분야로 활용범위가 넓어지고 있습니다. 국내 최고의 기술력을 보유한 사이람의 NetMiner와 함께 국내를 넘어 세계 시장의 넘버원이 되는 여정을 함께 하실 가족을 찾습니다. </p>
-                </div>
-
-                <div class="button-get-started">
-                    <a href="#gaia" class="btn btn-danger btn-fill btn-lg">채용 담당자 연락처</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="footer footer-big footer-color-black" data-color="black">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2 col-sm-3">
-                    <div class="info">
-                        <h5 class="title">Company</h5>
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a href="#">Home</a></li>
-                                <li>
-                                    <a href="#">Find offers</a>
-                                </li>
-                                <li>
-                                    <a href="#">Discover Projects</a>
-                                </li>
-                                <li>
-                                    <a href="#">Our Portfolio</a>
-                                </li>
-                                <li>
-                                    <a href="/about_us">About Us</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-md-3 col-md-offset-1 col-sm-3">
-                    <div class="info">
-                        <h5 class="title"> Help and Support</h5>
-                         <nav>
-                            <ul>
-                                <li>
-                                    <a href="#">Contact Us</a>
-                                </li>
-                                <li>
-                                    <a href="#">How it works</a>
-                                </li>
-                                <li>
-                                    <a href="#">Terms &amp; Conditions</a>
-                                </li>
-                                <li>
-                                    <a href="#">Company Policy</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <div class="info">
-                        <h5 class="title">News</h5>
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-twitter"></i> <b>문헌정보 서비스</b> 베타 테스트를 진행중입니다...
-                                        <hr class="hr-small">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-twitter"></i> [신간소식] <b>나는 나로살기로 했다</b>! 우리는 모두 슈퍼 히어로...
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-md-2 col-md-offset-1 col-sm-3">
-                    <div class="info">
-                        <h5 class="title">Follow us on</h5>
-                        <nav>
-                            <ul>
-                                <li>
-                                    <a href="#" class="btn btn-social btn-facebook btn-simple">
-                                        <i class="fa fa-facebook-square"></i> Facebook
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn btn-social btn-twitter btn-simple">
-                                        <i class="fa fa-twitter"></i> Twitter
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn btn-social btn-reddit btn-simple">
-                                        <i class="fa fa-google-plus-square"></i> Google+
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="copyright">
-                 © <script> document.write(new Date().getFullYear()) </script> Link the world
-            </div>
-        </div>
-    </footer>
 
 </body>
 
