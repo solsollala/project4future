@@ -23,7 +23,7 @@ django-filter==1.0.4
 django-rest-swagger==2.1.2
 -e git+https://github.com/django-tastypie/django-tastypie@90c5b20746124d3d959d8ad0fc13fcdc690c282a#egg=django_tastypie
 django-wysiwyg==0.8.0
-djangorestframework==3.6.3
+djangorestframework==3.11.2
 environ==1.0
 hyperlink==17.2.1
 idna==2.5
